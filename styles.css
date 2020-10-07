@@ -1,0 +1,15 @@
+.color-view{
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	display: inline;
+	width: 100px;
+	height: 100px;
+	margin: 5px;
+	padding:10px;
+}
+
+.rules{
+    width: 500px;
+	height: 200px;
+}
