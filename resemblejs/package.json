@@ -1,0 +1,59 @@
+{
+    "name": "resemblejs",
+    "version": "3.2.5",
+    "description": "Image analysis and comparison with HTML5",
+    "main": "resemble.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rsmbl/Resemble.js.git"
+    },
+    "keywords": [
+        "comparison",
+        "visual",
+        "image",
+        "diff",
+        "compare",
+        "html5"
+    ],
+    "author": "James Cryer",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/rsmbl/Resemble.js/issues"
+    },
+    "homepage": "https://github.com/rsmbl/Resemble.js",
+    "scripts": {
+        "test": "jest nodejs-tests",
+        "test:codacy-coverage": "jest nodejs-tests --coverage && cat ./coverage/lcov.info | codacy-coverage",
+        "test:watch": "jest --watch nodejs-tests",
+        "test:debug": "node --inspect node_modules/jest/bin/jest --watch --runInBand nodejs-tests",
+        "lint": "eslint **/*.js --fix"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,css,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "canvas": "2.6.1"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "eslint": "^7.6.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "husky": "^3.1.0",
+        "jest": "^25.1.0",
+        "jest-cli": "^25.1.0",
+        "lint-staged": "^9.5.0",
+        "prettier": "^2.0.0"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    }
+}

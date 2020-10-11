@@ -1,0 +1,13 @@
+demoassets
+npm-debug.log
+libs
+index.html
+bower.json
+README.md
+chai-tests
+nodejs-tests
+.dockerignore
+dockerfile
+.travis.yml
+memory-leak-test.js
+coverage
