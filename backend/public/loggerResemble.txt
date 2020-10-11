@@ -1,0 +1,63 @@
+
+> resemblejs@3.2.5 test /Users/hangel/Proyectos/ProyectoResenble/resemblejs
+> jest nodejs-tests
+
+objc[14060]: Class GNotificationCenterDelegate is implemented in both /Users/hangel/Proyectos/ProyectoResenble/resemblejs/node_modules/canvas/build/Release/libgio-2.0.0.dylib (0x10a95e2e0) and /Users/hangel/node_modules/canvas/build/Release/libgio-2.0.0.dylib (0x10c5222e0). One of the two will be used. Which one is undefined.
+PASS nodejs-tests/ignore.test.js
+PASS nodejs-tests/errorPixelTransform.test.js
+(node:14060) UnhandledPromiseRejectionWarning: ReferenceError: fs is not defined
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14060) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:14060) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+PASS nodejs-tests/difference.test.js
+  ● Console
+
+    console.log
+      {
+        isSameDimensions: true,
+        dimensionDifference: { width: 0, height: 0 },
+        rawMisMatchPercentage: 5.423181818181818,
+        misMatchPercentage: '5.42',
+        diffBounds: { top: 58, left: 8, bottom: 384, right: 702 },
+        analysisTime: 973,
+        getImageDataUrl: [Function (anonymous)],
+        getBuffer: [Function (anonymous)]
+      }
+
+      at Array.<anonymous> (nodejs-tests/difference.test.js:42:21)
+
+    console.log
+      {
+        isSameDimensions: true,
+        dimensionDifference: { width: 0, height: 0 },
+        rawMisMatchPercentage: 5.417424242424242,
+        misMatchPercentage: '5.42',
+        diffBounds: { top: 58, left: 8, bottom: 384, right: 702 },
+        analysisTime: 665,
+        getImageDataUrl: [Function (anonymous)],
+        getBuffer: [Function (anonymous)]
+      }
+
+      at Array.<anonymous> (nodejs-tests/difference.test.js:51:21)
+
+    console.log
+      {
+        isSameDimensions: true,
+        dimensionDifference: { width: 0, height: 0 },
+        rawMisMatchPercentage: 1.5242424242424244,
+        misMatchPercentage: '1.52',
+        diffBounds: { top: 58, left: 138, bottom: 289, right: 702 },
+        analysisTime: 648,
+        getImageDataUrl: [Function (anonymous)],
+        getBuffer: [Function (anonymous)]
+      }
+
+      at Array.<anonymous> (nodejs-tests/difference.test.js:65:21)
+
+PASS nodejs-tests/resemble.test.js
+
+Test Suites: 4 passed, 4 total
+Tests:       22 passed, 22 total
+Snapshots:   0 total
+Time:        4.326s
+Ran all test suites matching /nodejs-tests/i.

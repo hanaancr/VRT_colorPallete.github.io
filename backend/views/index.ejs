@@ -1,0 +1,194 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+           h3 { color: #337AFF; 
+                font-size: x-small;
+           }
+           h1 {
+               color: rgb(1, 15, 41); 
+               font-size: x-small;
+               font-weight: 200;
+           }
+          img{
+            width: 400px;
+          }
+          div{
+            font-size: x-small;
+                       
+          }
+         
+        </style>
+          <script languague="javascript">
+            function cargarImagenes(){
+              var img1 = document.getElementById('imagen1');
+              console.log('img1: '+img1);
+              if(img1){
+                cerrar(); 
+              }
+             
+            }
+            function mostrar() {
+                div1 = document.getElementById('row1');
+                div2 = document.getElementById('row2');
+                div3 = document.getElementById('row3');
+                div1.style.display = '';
+                div2.style.display = '';
+                div3.style.display = '';
+            }
+    
+            function cerrar() {
+               console.log('cerrando');
+                div1 = document.getElementById('row1');
+                div2 = document.getElementById('row2');
+                div3 = document.getElementById('row3');
+                div1.style.display = 'none';
+                div2.style.display = 'none';
+                div3.style.display = 'none';
+            }
+           
+         </script>
+    </head>
+    <body>
+      <form id="formAddUser" name="index" method="post" action="/index">
+        
+        
+        <div class="content" >
+            <div class="container">
+              <p>&nbsp;</p>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Generar Reporte</button>
+              <p>&nbsp;</p>
+                <div class="row" id="row1">
+                  <div class="col-sm">
+                    <h3>Imagen Base image -- compare.png</h3>
+                    <img src="screenshots/pallete.js/image -- compare.png" id="imagen1" onerror="cerrar()">
+                  </div>
+                  <div class="col-sm">
+                    <h3>Imagen Modificada image -- compare (1).png</h3>
+                    <img src="screenshots/pallete.js/image -- compare (1).png">
+                  </div>
+                  
+                  <div class="col-sm">
+                    <h3>Información Importante</h3>
+                    <h1>Dimensiones iguales:</h1> <div id="isSameDimensions"></div>
+                    <h1>Porcentaje de error básico:</h1> <div id="rawMisMatchPercentage"></div>
+                    <h1>Porcentaje de error detallado:</h1> <div id="misMatchPercentage"></div>
+                    <h1>Diferencia de dimensiones:</h1> <div id="diffBounds"></div>
+                    <h1>Tiempo de análisis:</h1> <div id="analysisTime"></div>
+                    <script>
+                     var arrayData = new Array();
+                     var archivoTxt = new XMLHttpRequest();
+                     var fileRuta = 'loggerResemble.txt';
+                    
+                     archivoTxt.open("GET",fileRuta,false);
+                     archivoTxt.send(null);
+                     
+                     var txt = archivoTxt.responseText;
+                     
+
+                     var word = txt.search("isSameDimensions");
+                     var valor = txt.substring((word+18), (word+18+9));
+                     console.log('Valor isSameDimensions: '+valor);
+                     document.getElementById("isSameDimensions").innerHTML=valor;
+                     
+                     var word1 = txt.search("rawMisMatchPercentage");
+                     var valor1 = txt.substring((word1+22), (word1+22+10));
+                     console.log('Valor rawMisMatchPercentage: '+valor1);
+                     document.getElementById("rawMisMatchPercentage").innerHTML=valor1;
+
+                     var word2 = txt.search("misMatchPercentage");
+                     var valor2 = txt.substring((word2+20), (word2+20+9)); 
+                     console.log('Valor misMatchPercentage: '+valor2);
+                     document.getElementById("misMatchPercentage").innerHTML=valor2;
+
+                     var word3 = txt.search("diffBounds");
+                     var valor3 = txt.substring((word3+12), (word3+12+45));
+                     console.log('Valor diffBounds: '+valor3);
+                     document.getElementById("diffBounds").innerHTML=valor3;
+
+                     var word4 = txt.search("analysisTime");
+                     var valor4 = txt.substring((word4+14), (word4+14+9));
+                     console.log('Valor analysisTime: '+valor4);
+                     document.getElementById("analysisTime").innerHTML=valor4;
+                    
+                    </script>
+                   
+                  </div>
+                </div>
+                <div class="row" id="row2">
+                  <div class="col-sm">
+                    <h3>Imagen Base image -- compare.png</h3>
+                    <img src="screenshots/pallete.js/image -- compare.png">
+                  </div>
+                  <div class="col-sm">
+                    <h3>Imagen Modificada image -- compare (2).png</h3>
+                    <img src="screenshots/pallete.js/image -- compare (2).png">
+                  </div>
+                  <div class="col-sm">
+                    <h3>Diferencias</h3>
+                  </div>
+                  <div class="col-sm">
+                    <h3>Información Importante</h3>
+
+                    <h3>Información Importante</h3>
+                    <h1>Dimensiones iguales:</h1> <div id="isSameDimensions1"></div>
+                    <h1>Porcentaje de error básico:</h1> <div id="rawMisMatchPercentage1"></div>
+                    <h1>Porcentaje de error detallado:</h1> <div id="misMatchPercentage1"></div>
+                    <h1>Diferencia de dimensiones:</h1> <div id="diffBounds1"></div>
+                    <h1>Tiempo de análisis:</h1> <div id="analysisTime1"></div>
+
+                    <script>
+                     console.log('valor4 antes: '+valor4);
+                     var world_Ocu2 = txt.indexOf("isSameDimensions","1726");
+                     var valor_Ocu2 = txt.substring((world_Ocu2+18), (world_Ocu2+18+10));
+                     console.log('world_Ocu2 despues: '+world_Ocu2);  
+                     console.log('valor_Ocu2 despues: '+valor_Ocu2);  
+                     document.getElementById("isSameDimensions1").innerHTML=valor_Ocu2;               
+                     
+                     var word1_Ocu2 = txt.indexOf("rawMisMatchPercentage","1726");
+                     var valor1_Ocu2 = txt.substring((word1_Ocu2+22), (word1_Ocu2+22+10));
+                     console.log('word1_Ocu2 rawMisMatchPercentage despues: '+word1_Ocu2);  
+                     console.log('valor1_Ocu2 rawMisMatchPercentage despues: '+valor1_Ocu2); 
+                     document.getElementById("rawMisMatchPercentage1").innerHTML=valor1_Ocu2; 
+
+                     var word2_Ocu2  = txt.indexOf("misMatchPercentage","1726");
+                     var valor2_Ocu2  = txt.substring((word2_Ocu2+20), (word2_Ocu2+20+9)); 
+                     console.log('Valor misMatchPercentage: '+valor2_Ocu2);
+                     document.getElementById("misMatchPercentage1").innerHTML=valor2_Ocu2;
+
+                     var word3_Ocu2 = txt.indexOf("diffBounds","1726");
+                     var valor3_Ocu2 = txt.substring((word3_Ocu2+12), (word3_Ocu2+12+45));
+                     console.log('Valor diffBounds: '+valor3_Ocu2);
+                     document.getElementById("diffBounds1").innerHTML=valor3_Ocu2;
+
+                     var word4_Ocu2 = txt.indexOf("analysisTime","1726" );
+                     var valor4_Ocu2 = txt.substring((word4_Ocu2+14), (word4_Ocu2+14+10));
+                     console.log('Valor analysisTime: '+valor4_Ocu2);
+                     document.getElementById("analysisTime1").innerHTML=valor4_Ocu2;
+                    </script>
+                  </div>
+                </div>
+                <div class="row" id="row3">
+                  <div class="col-sm">
+                    <h3>Imagen Base image -- compare (1).png</h3>
+                    <img src="screenshots/pallete.js/image -- compare (1).png">
+                  </div>
+                  <div class="col-sm">
+                    <h3>Imagen Modificada image -- compare (2).png</h3>
+                    <img src="screenshots/pallete.js/image -- compare (2).png">
+                  </div>
+                  <div class="col-sm">
+                    <h3>Diferencias</h3>
+                  </div>
+                  <div class="col-sm">
+                    <h3>Información Importante</h3>
+                    <p>
+                     
+                    </p>
+                  </div>
+                </div> 
+            </div>
+        </div>
+      </form>
+    </body>
+</html>
