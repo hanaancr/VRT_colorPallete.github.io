@@ -124,13 +124,10 @@
                     <h3>Imagen Modificada image -- compare (2).png</h3>
                     <img src="screenshots/pallete.js/image -- compare (2).png">
                   </div>
-                  <div class="col-sm">
-                    <h3>Diferencias</h3>
-                  </div>
+                  
                   <div class="col-sm">
                     <h3>Información Importante</h3>
 
-                    <h3>Información Importante</h3>
                     <h1>Dimensiones iguales:</h1> <div id="isSameDimensions1"></div>
                     <h1>Porcentaje de error básico:</h1> <div id="rawMisMatchPercentage1"></div>
                     <h1>Porcentaje de error detallado:</h1> <div id="misMatchPercentage1"></div>
@@ -177,14 +174,44 @@
                     <h3>Imagen Modificada image -- compare (2).png</h3>
                     <img src="screenshots/pallete.js/image -- compare (2).png">
                   </div>
-                  <div class="col-sm">
-                    <h3>Diferencias</h3>
-                  </div>
+                  
                   <div class="col-sm">
                     <h3>Información Importante</h3>
-                    <p>
-                     
-                    </p>
+
+                    <h1>Dimensiones iguales:</h1> <div id="isSameDimensions2"></div>
+                    <h1>Porcentaje de error básico:</h1> <div id="rawMisMatchPercentage2"></div>
+                    <h1>Porcentaje de error detallado:</h1> <div id="misMatchPercentage2"></div>
+                    <h1>Diferencia de dimensiones:</h1> <div id="diffBounds2"></div>
+                    <h1>Tiempo de análisis:</h1> <div id="analysisTime2"></div>
+                    <script>
+                      
+                      var world_Ocu3 = txt.indexOf("isSameDimensions","2186");
+                      var valor_Ocu3 = txt.substring((world_Ocu3+18), (world_Ocu3+18+10));
+                      console.log('world_Ocu3 despues: '+world_Ocu3);  
+                      console.log('valor_Ocu3 despues: '+valor_Ocu3);  
+                      document.getElementById("isSameDimensions2").innerHTML=valor_Ocu3;               
+                      
+                      var word1_Ocu3 = txt.indexOf("rawMisMatchPercentage","2186");
+                      var valor1_Ocu3 = txt.substring((word1_Ocu3+22), (word1_Ocu3+22+10));
+                      console.log('word1_Ocu3 rawMisMatchPercentage despues: '+word1_Ocu3);  
+                      console.log('valor1_Ocu3 rawMisMatchPercentage despues: '+valor1_Ocu3); 
+                      document.getElementById("rawMisMatchPercentage2").innerHTML=valor1_Ocu3; 
+ 
+                      var word2_Ocu3  = txt.indexOf("misMatchPercentage","2186");
+                      var valor2_Ocu3  = txt.substring((word2_Ocu3+20), (word2_Ocu3+20+9)); 
+                      console.log('Valor misMatchPercentage: '+valor2_Ocu3);
+                      document.getElementById("misMatchPercentage2").innerHTML=valor2_Ocu3;
+ 
+                      var word3_Ocu3 = txt.indexOf("diffBounds","2186");
+                      var valor3_Ocu3 = txt.substring((word3_Ocu3+12), (word3_Ocu3+12+45));
+                      console.log('Valor diffBounds: '+valor3_Ocu3);
+                      document.getElementById("diffBounds2").innerHTML=valor3_Ocu3;
+ 
+                      var word4_Ocu3 = txt.indexOf("analysisTime","2186" );
+                      var valor4_Ocu3 = txt.substring((word4_Ocu3+14), (word4_Ocu3+14+10));
+                      console.log('Valor analysisTime: '+valor4_Ocu3);
+                      document.getElementById("analysisTime2").innerHTML=valor4_Ocu3;
+                     </script>                    
                   </div>
                 </div> 
             </div>
